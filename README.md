@@ -9,7 +9,7 @@
 and [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en)
 
 <!-- [![Website](https://img.shields.io/badge/Project-Website-87CEEB)](site_url) -->
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](arxiv_link)
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2303.15446)
 <!-- [![video](https://img.shields.io/badge/Video-Presentation-F9D371)](youtube_link) -->
 <!-- [![slides](https://img.shields.io/badge/Presentation-Slides-B762C1)](presentation) -->
 
@@ -125,7 +125,7 @@ if you use our work, please consider citing us:
 @article{Shaker2023SwiftFormer,
   title={SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications},
   author={Shaker, Abdelrahman and Maaz, Muhammad and Rasheed, Hanoona and Khan, Salman and Yang, Ming-Hsuan and Khan, Fahad Shahbaz},
-  journal={arXiv preprint arXiv:X.X},
+  journal={arXiv preprint arXiv:2303.15446},
   year={2023}
 }
 ```
