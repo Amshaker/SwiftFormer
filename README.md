@@ -1,19 +1,17 @@
 # SwiftFormer
 ### **SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications**
  
-[Abdelrahman Shaker](https://scholar.google.com/citations?hl=en&user=eEz4Wu4AAAAJ),
-[Muhammad Maaz](https://scholar.google.com/citations?user=vTy9Te8AAAAJ&hl=en&authuser=1&oi=sra),
-[Hanoona Rasheed](https://scholar.google.com/citations?user=yhDdEuEAAAAJ&hl=en&authuser=1&oi=sra),
-[Salman Khan](https://salman-h-khan.github.io),
-[Ming-Hsuan Yang](https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en),
-and [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en)
+![](https://i.imgur.com/waxVImv.png)
+[Abdelrahman Shaker](https://scholar.google.com/citations?hl=en&user=eEz4Wu4AAAAJ)<sup>*1</sup>, [Muhammad Maaz](https://scholar.google.com/citations?user=vTy9Te8AAAAJ&hl=en&authuser=1&oi=sra)<sup>1</sup>, [Hanoona Rasheed](https://scholar.google.com/citations?user=yhDdEuEAAAAJ&hl=en&authuser=1&oi=sra)<sup>1</sup>, [Salman Khan](https://salman-h-khan.github.io/)<sup>1</sup>, [Ming-Hsuan Yang](https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en)<sup>2,3</sup> and [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en)<sup>1,4</sup>
 
+Mohamed Bin Zayed University of Artificial Intelligence<sup>1</sup>, University of California Merced<sup>2</sup>, Google Research<sup>3</sup>, Linkoping University<sup>4</sup>
 <!-- [![Website](https://img.shields.io/badge/Project-Website-87CEEB)](site_url) -->
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2303.15446)
 <!-- [![video](https://img.shields.io/badge/Video-Presentation-F9D371)](youtube_link) -->
 <!-- [![slides](https://img.shields.io/badge/Presentation-Slides-B762C1)](presentation) -->
 
 ## :rocket: News
+* **(Jul 14, 2023):** SwiftFormer has been accepted at ICCV 2023. :fire::fire:
 * **(Mar 27, 2023):** Classification training and evaluation codes along with pre-trained models are released.
 
 <hr />
@@ -99,7 +97,7 @@ To train SwiftFormer models on an 8-GPU machine:
 sh dist_train.sh /path/to/imagenet 8
 ```
 
-Note: specify which model command you want to run in the script. To reproduce the results of the paper, use 16-GPU machine with batch-size of 128 or 8-GPU machine with batch size of 256. Auto Augmentation, CutMix, MixUp are disabled for SwiftFormer-XS only.
+Note: specify which model command you want to run in the script. To reproduce the results of the paper, use 16-GPU machine with batch-size of 128 or 8-GPU machine with batch size of 256. Auto Augmentation, CutMix, MixUp are disabled for SwiftFormer-XS, and CutMix, MixUp are disabled for SwiftFormer-S. 
 
 ### Multi-node training
 
