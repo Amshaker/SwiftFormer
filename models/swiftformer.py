@@ -25,9 +25,6 @@ SwiftFormer_depth = {
     'l3': [4, 4, 12, 6],
 }
 
-CoreMLConversion = False
-
-
 def stem(in_chs, out_chs):
     """
     Stem Layer that is implemented by two layers of conv.
@@ -144,8 +141,8 @@ class Mlp(nn.Module):
 class EfficientAdditiveAttnetion(nn.Module):
     """
     Efficient Additive Attention module for SwiftFormer.
-    Input: tensor in shape [B, C, H, W]
-    Output: tensor in shape [B, C, H, W]
+    Input: tensor in shape [B, N, D]
+    Output: tensor in shape [B, N, D]
     """
 
     def __init__(self, in_dims=512, token_dim=256, num_heads=2):
@@ -163,26 +160,23 @@ class EfficientAdditiveAttnetion(nn.Module):
         query = self.to_query(x)
         key = self.to_key(x)
 
-        if not CoreMLConversion:
-            # torch.nn.functional.normalize is not supported by the ANE of iPhone devices.
-            # Using this layer improves the accuracy by ~0.1-0.2%
-            query = torch.nn.functional.normalize(query, dim=-1)
-            key = torch.nn.functional.normalize(key, dim=-1)
+        query = torch.nn.functional.normalize(query, dim=-1) #BxNxD
+        key = torch.nn.functional.normalize(key, dim=-1) #BxNxD
 
-        query_weight = query @ self.w_g
-        A = query_weight * self.scale_factor
+        query_weight = query @ self.w_g # BxNx1 (BxNxD @ Dx1)
+        A = query_weight * self.scale_factor # BxNx1
 
-        A = A.softmax(dim=-1)
+        A = torch.nn.functional.normalize(A, dim=1) # BxNx1
 
-        G = torch.sum(A * query, dim=1)
+        G = torch.sum(A * query, dim=1) # BxD
 
         G = einops.repeat(
             G, "b d -> b repeat d", repeat=key.shape[1]
-        )
+        ) # BxNxD
 
-        out = self.Proj(G * key) + query
+        out = self.Proj(G * key) + query #BxNxD
 
-        out = self.final(out)
+        out = self.final(out) # BxNxD
 
         return out
 
@@ -215,6 +209,7 @@ class SwiftFormerLocalRepresentation(nn.Module):
                 nn.init.constant_(m.bias, 0)
 
     def forward(self, x):
+        print("SwiftFormerLocalRepresentation input is ", x.shape)
         input = x
         x = self.dwconv(x)
         x = self.norm(x)
@@ -225,6 +220,7 @@ class SwiftFormerLocalRepresentation(nn.Module):
             x = input + self.drop_path(self.layer_scale * x)
         else:
             x = input + self.drop_path(x)
+        
         return x
 
 
@@ -505,3 +501,4 @@ def SwiftFormer_L3(pretrained=False, **kwargs):
         **kwargs)
     model.default_cfg = _cfg(crop_pct=0.9)
     return model
+
