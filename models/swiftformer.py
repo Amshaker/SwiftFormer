@@ -209,7 +209,6 @@ class SwiftFormerLocalRepresentation(nn.Module):
                 nn.init.constant_(m.bias, 0)
 
     def forward(self, x):
-        print("SwiftFormerLocalRepresentation input is ", x.shape)
         input = x
         x = self.dwconv(x)
         x = self.norm(x)
@@ -220,7 +219,6 @@ class SwiftFormerLocalRepresentation(nn.Module):
             x = input + self.drop_path(self.layer_scale * x)
         else:
             x = input + self.drop_path(x)
-        
         return x
 
 
