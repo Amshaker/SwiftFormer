@@ -9,7 +9,7 @@ python -m torch.distributed.launch --nproc_per_node=$nGPUs --use_env main.py --m
 --output_dir SwiftFormer_XS_results
 
 ## SwiftFormer-S
-python -m torch.distributed.launch --nproc_per_node=$nGPUs --use_env main.py --model SwiftFormer_S --data-path "$IMAGENET_PATH" \
+python -m torch.distributed.launch --nproc_per_node=$nGPUs --use_env main.py --model SwiftFormer_S --mixup 0 --cutmix 0 --data-path "$IMAGENET_PATH" \
 --output_dir SwiftFormer_S_results
 
 ## SwiftFormer-L1
