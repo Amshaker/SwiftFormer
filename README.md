@@ -1,19 +1,17 @@
 # SwiftFormer
 ### **SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications**
  
-[Abdelrahman Shaker](https://scholar.google.com/citations?hl=en&user=eEz4Wu4AAAAJ),
-[Muhammad Maaz](https://scholar.google.com/citations?user=vTy9Te8AAAAJ&hl=en&authuser=1&oi=sra),
-[Hanoona Rasheed](https://scholar.google.com/citations?user=yhDdEuEAAAAJ&hl=en&authuser=1&oi=sra),
-[Salman Khan](https://salman-h-khan.github.io),
-[Ming-Hsuan Yang](https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en),
-and [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en)
+![](https://i.imgur.com/waxVImv.png)
+[Abdelrahman Shaker](https://scholar.google.com/citations?hl=en&user=eEz4Wu4AAAAJ)<sup>*1</sup>, [Muhammad Maaz](https://scholar.google.com/citations?user=vTy9Te8AAAAJ&hl=en&authuser=1&oi=sra)<sup>1</sup>, [Hanoona Rasheed](https://scholar.google.com/citations?user=yhDdEuEAAAAJ&hl=en&authuser=1&oi=sra)<sup>1</sup>, [Salman Khan](https://salman-h-khan.github.io/)<sup>1</sup>, [Ming-Hsuan Yang](https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en)<sup>2,3</sup> and [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en)<sup>1,4</sup>
 
+Mohamed Bin Zayed University of Artificial Intelligence<sup>1</sup>, University of California Merced<sup>2</sup>, Google Research<sup>3</sup>, Linkoping University<sup>4</sup>
 <!-- [![Website](https://img.shields.io/badge/Project-Website-87CEEB)](site_url) -->
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2303.15446)
 <!-- [![video](https://img.shields.io/badge/Video-Presentation-F9D371)](youtube_link) -->
 <!-- [![slides](https://img.shields.io/badge/Presentation-Slides-B762C1)](presentation) -->
 
 ## :rocket: News
+* **(Jul 14, 2023):** SwiftFormer has been accepted at ICCV 2023. :fire::fire:
 * **(Mar 27, 2023):** Classification training and evaluation codes along with pre-trained models are released.
 
 <hr />
@@ -47,10 +45,10 @@ Self-attention has become a defacto choice for capturing global context in vario
 
 | Model | Top-1 accuracy | #params | GMACs | Latency | Ckpt | CoreML|
 |:---------------|:----:|:---:|:--:|:--:|:--:|:--:|
-| SwiftFormer-XS |   75.7%    |     3.5M    |   0.4G   |      0.7ms     |  [XS](https://drive.google.com/file/d/15Ils-U96pQePXQXx2MpmaI-yAceFAr2x/view?usp=sharing)    |   [XS](https://drive.google.com/file/d/1tZVxtbtAZoLLoDc5qqoUGulilksomLeK/view?usp=sharing)    |
-| SwiftFormer-S  |   78.5%    |     6.1M    |   1.0G   |      0.8ms     |   [S](https://drive.google.com/file/d/1_0eWwgsejtS0bWGBQS3gwAtYjXdPRGlu/view?usp=sharing)   |   [S](https://drive.google.com/file/d/13EOCZmtvbMR2V6UjezSZnbBz2_-59Fva/view?usp=sharing)    |
-| SwiftFormer-L1 |   80.9%   |    12.1M   |   1.6G   |      1.1ms     |   [L1](https://drive.google.com/file/d/1jlwrwWQ0SQzDRc5adtWIwIut5d1g9EsM/view?usp=sharing)   |   [L1](https://drive.google.com/file/d/1c3VUsi4q7QQ2ykXVS2d4iCRL478fWF3e/view?usp=sharing)    |
-| SwiftFormer-L3 |   83.0%   |    28.5M    |   4.0G   |      1.9ms     |  [L3](https://drive.google.com/file/d/1ypBcjx04ShmPYRhhjBRubiVjbExUgSa7/view?usp=sharing)    |   [L3](https://drive.google.com/file/d/1svahgIjh7da781jHOHjX58mtzCzYXSsJ/view?usp=sharing)   |
+| SwiftFormer-XS |   75.7%    |     3.5M    |   0.6G   |      0.7ms     |  [XS](https://drive.google.com/file/d/12RchxzyiJrtZS-2Bur9k4wcRQMItA43S/view?usp=sharing)    |   [XS](https://drive.google.com/file/d/1bkAP_BD6CdDqlbQsStZhLa0ST2NZTIvH/view?usp=sharing)    |
+| SwiftFormer-S  |   78.5%    |     6.1M    |   1.0G   |      0.8ms     |   [S](https://drive.google.com/file/d/1awpcXAaHH38WaHrOmUM8updxQazUZ3Nb/view?usp=sharing)   |   [S](https://drive.google.com/file/d/1qNAhecWIeQ1YJotWhbnLTCR5Uv1zBaf1/view?usp=sharing)    |
+| SwiftFormer-L1 |   80.9%   |    12.1M   |   1.6G   |      1.1ms     |   [L1](https://drive.google.com/file/d/1SDzauVmpR5uExkOv3ajxdwFnP-Buj9Uo/view?usp=sharing)   |   [L1](https://drive.google.com/file/d/1CowZE7-lbxz93uwXqefe-HxGOHUdvX_a/view?usp=sharing)    |
+| SwiftFormer-L3 |   83.0%   |    28.5M    |   4.0G   |      1.9ms     |  [L3](https://drive.google.com/file/d/1DAxMe6FlnZBBIpR-HYIDfFLWJzIgiF0Y/view?usp=sharing)    |   [L3](https://drive.google.com/file/d/1SO3bRWd9oWJemy-gpYUcwP-B4bJ-dsdg/view?usp=sharing)   |
 
 
 ## Detection and Segmentation Qualitative Results
@@ -77,6 +75,7 @@ conda activate swiftformer
 
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install timm
+pip install coremltools==5.2.0
 ```
 
 ### Data preparation
@@ -98,7 +97,7 @@ To train SwiftFormer models on an 8-GPU machine:
 sh dist_train.sh /path/to/imagenet 8
 ```
 
-Note: specify which model command you want to run in the script. To reproduce the results of the paper, use 16-GPU machine with batch-size of 128 or 8-GPU machine with batch size of 256. Auto Augmentation, CutMix, MixUp are disabled for SwiftFormer-XS only.
+Note: specify which model command you want to run in the script. To reproduce the results of the paper, use 16-GPU machine with batch-size of 128 or 8-GPU machine with batch size of 256. Auto Augmentation, CutMix, MixUp are disabled for SwiftFormer-XS, and CutMix, MixUp are disabled for SwiftFormer-S. 
 
 ### Multi-node training
 

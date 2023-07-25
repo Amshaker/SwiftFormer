@@ -15,9 +15,8 @@ srun python main.py --model "$MODEL" \
 --data-path "$IMAGENET_PATH" \
 --batch-size 128 \
 --epochs 300 \
---aa="" --mixup 0 --cutmix 0
 
 
-## Note: Disable aa, mixup, and cutmix for SwiftFormer-XS only
+## Note: Disable aa, mixup, and cutmix for SwiftFormer-XS, and disable mixup, and cutmix for SwiftFormer-S.
 ## By default, this script requests total 16 GPUs on 4 nodes. The batch size per gpu is set to 128,
 ## tha sums to 128*16=2048 in total.
