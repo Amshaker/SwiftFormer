@@ -124,7 +124,7 @@ if you use our work, please consider citing us:
 @article{Shaker2023SwiftFormer,
   title={SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications},
   author={Shaker, Abdelrahman and Maaz, Muhammad and Rasheed, Hanoona and Khan, Salman and Yang, Ming-Hsuan and Khan, Fahad Shahbaz},
-  booktitle={Proceedings of the IEEE international conference on computer vision},
+  journal={arXiv:2303.15446},
   year={2023}
 }
 ```
