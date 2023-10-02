@@ -6,7 +6,7 @@
 
 Mohamed Bin Zayed University of Artificial Intelligence<sup>1</sup>, University of California Merced<sup>2</sup>, Google Research<sup>3</sup>, Linkoping University<sup>4</sup>
 <!-- [![Website](https://img.shields.io/badge/Project-Website-87CEEB)](site_url) -->
-[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2303.15446)
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://openaccess.thecvf.com/content/ICCV2023/papers/Shaker_SwiftFormer_Efficient_Additive_Attention_for_Transformer-based_Real-time_Mobile_Vision_Applications_ICCV_2023_paper.pdf)
 <!-- [![video](https://img.shields.io/badge/Video-Presentation-F9D371)](youtube_link) -->
 <!-- [![slides](https://img.shields.io/badge/Presentation-Slides-B762C1)](presentation) -->
 
@@ -121,11 +121,11 @@ sh dist_test.sh SwiftFormer_XS 8 weights/SwiftFormer_XS_ckpt.pth
 ## Citation
 if you use our work, please consider citing us:
 ```BibTeX
-@article{Shaker2023SwiftFormer,
-  title={SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications},
-  author={Shaker, Abdelrahman and Maaz, Muhammad and Rasheed, Hanoona and Khan, Salman and Yang, Ming-Hsuan and Khan, Fahad Shahbaz},
-  journal={arXiv:2303.15446},
-  year={2023}
+@InProceedings{Shaker_2023_ICCV,
+    author    = {Shaker, Abdelrahman and Maaz, Muhammad and Rasheed, Hanoona and Khan, Salman and Yang, Ming-Hsuan and Khan, Fahad Shahbaz},
+    title     = {SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year      = {2023},
 }
 ```
 
