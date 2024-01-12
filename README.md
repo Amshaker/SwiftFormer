@@ -80,7 +80,7 @@ Community-driven results with [Samsung Galaxy S23 Ultra, with Qualcomm Snapdrago
     | -------------- | -----| ----- | ------ |
     | Latency (msec) | 2.17 | 1.69  | 1.7    |
 
-    Refer to script above for details of the input & block parameters.
+    Refer to the script above for details of the input & block parameters.
 
 ❓ _Interested in reproducing the results above?_
 
@@ -100,7 +100,7 @@ pip install timm
 pip install coremltools==5.2.0
 ```
 
-### Data preparation
+### Data Preparation
 
 Download and extract ImageNet train and val images from http://image-net.org. The training and validation data are expected to be in the `train` folder and `val` folder respectively:
 ```
@@ -109,7 +109,7 @@ Download and extract ImageNet train and val images from http://image-net.org. Th
     |-- val
 ```
 
-### Single machine multi-GPU training
+### Single-machine multi-GPU training
 
 We provide training script for all models in `dist_train.sh` using PyTorch distributed data parallel (DDP).
 
@@ -129,7 +129,7 @@ On a Slurm-managed cluster, multi-node training can be launched as
 sbatch slurm_train.sh /path/to/imagenet SwiftFormer_XS
 ```
 
-Note: specify slurm specific paramters in `slurm_train.sh` script.
+Note: specify slurm specific parameters in `slurm_train.sh` script.
 
 ### Testing
 
@@ -156,7 +156,9 @@ If you have any questions, please create an issue on this repository or contact 
 
 
 ## Acknowledgement
-Our code base is based on [LeViT](https://github.com/facebookresearch/LeViT) and [EfficientFormer](https://github.com/snap-research/EfficientFormer) repositories. We thank authors for their open-source implementation.
+Our code base is based on [LeViT](https://github.com/facebookresearch/LeViT) and [EfficientFormer](https://github.com/snap-research/EfficientFormer) repositories. We thank the authors for their open-source implementation.
+
+I'd like to express my sincere appreciation to [Victor Escorcia](https://github.com/escorciav) for measuring & reporting the latency of SwiftFormer on Android (Samsung Galaxy S23 Ultra, with Qualcomm Snapdragon 8 Gen 2). Check [SwiftFormer Meets Android](https://github.com/escorciav/SwiftFormer) for more details!
 
 ## Our Related Works
 
