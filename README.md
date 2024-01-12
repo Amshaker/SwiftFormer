@@ -1,6 +1,6 @@
 # SwiftFormer
 ### **SwiftFormer: Efficient Additive Attention for Transformer-based Real-time Mobile Vision Applications**
- 
+
 ![](https://i.imgur.com/waxVImv.png)
 [Abdelrahman Shaker](https://scholar.google.com/citations?hl=en&user=eEz4Wu4AAAAJ)<sup>*1</sup>, [Muhammad Maaz](https://scholar.google.com/citations?user=vTy9Te8AAAAJ&hl=en&authuser=1&oi=sra)<sup>1</sup>, [Hanoona Rasheed](https://scholar.google.com/citations?user=yhDdEuEAAAAJ&hl=en&authuser=1&oi=sra)<sup>1</sup>, [Salman Khan](https://salman-h-khan.github.io/)<sup>1</sup>, [Ming-Hsuan Yang](https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en)<sup>2,3</sup> and [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en)<sup>1,4</sup>
 
@@ -60,14 +60,36 @@ Self-attention has become a defacto choice for capturing global context in vario
   <img src="images/semantic_seg.png" width=100%> <br>
 </p>
 
-## Latency Measurement 
+## Latency Measurement
 
 The latency reported in SwiftFormer for iPhone 14 (iOS 16) uses the benchmark tool from [XCode 14](https://developer.apple.com/videos/play/wwdc2022/10027/).
 
-## ImageNet  
+### SwiftFormer meets Android
+
+Community-driven results with [Samsung Galaxy S23 Ultra, with Qualcomm Snapdragon 8 Gen 2](https://www.qualcomm.com/snapdragon/device-finder/samsung-galaxy-s23-ultra):
+
+1. [Export](https://github.com/escorciav/SwiftFormer/blob/main-v/export.py) & profiler results of [`SwiftFormer_L1`](./models/swiftformer.py):
+
+    | QNN            | 2.16 | 2.17  | 2.18   |
+    | -------------- | -----| ----- | ------ |
+    | Latency (msec) | 2.63 | 2.26  | 2.43   |
+
+2. [Export](https://github.com/escorciav/SwiftFormer/blob/main-v/export_block.py) & profiler results of SwiftFormerEncoder block:
+
+    | QNN            | 2.16 | 2.17  | 2.18   |
+    | -------------- | -----| ----- | ------ |
+    | Latency (msec) | 2.17 | 1.69  | 1.7    |
+
+    Refer to script above for details of the input & block parameters.
+
+❓ _Interested in reproducing the results above?_
+
+Refer to [Issue #14](https://github.com/Amshaker/SwiftFormer/issues/14) for details about [exporting & profiling.](https://github.com/Amshaker/SwiftFormer/issues/14#issuecomment-1883351728)
+
+## ImageNet
 
 ### Prerequisites
-`conda` virtual environment is recommended. 
+`conda` virtual environment is recommended.
 
 ```shell
 conda create --name=swiftformer python=3.9
@@ -89,7 +111,7 @@ Download and extract ImageNet train and val images from http://image-net.org. Th
 
 ### Single machine multi-GPU training
 
-We provide training script for all models in `dist_train.sh` using PyTorch distributed data parallel (DDP). 
+We provide training script for all models in `dist_train.sh` using PyTorch distributed data parallel (DDP).
 
 To train SwiftFormer models on an 8-GPU machine:
 
@@ -97,7 +119,7 @@ To train SwiftFormer models on an 8-GPU machine:
 sh dist_train.sh /path/to/imagenet 8
 ```
 
-Note: specify which model command you want to run in the script. To reproduce the results of the paper, use 16-GPU machine with batch-size of 128 or 8-GPU machine with batch size of 256. Auto Augmentation, CutMix, MixUp are disabled for SwiftFormer-XS, and CutMix, MixUp are disabled for SwiftFormer-S. 
+Note: specify which model command you want to run in the script. To reproduce the results of the paper, use 16-GPU machine with batch-size of 128 or 8-GPU machine with batch size of 256. Auto Augmentation, CutMix, MixUp are disabled for SwiftFormer-XS, and CutMix, MixUp are disabled for SwiftFormer-S.
 
 ### Multi-node training
 
@@ -107,11 +129,11 @@ On a Slurm-managed cluster, multi-node training can be launched as
 sbatch slurm_train.sh /path/to/imagenet SwiftFormer_XS
 ```
 
-Note: specify slurm specific paramters in `slurm_train.sh` script.  
+Note: specify slurm specific paramters in `slurm_train.sh` script.
 
-### Testing 
+### Testing
 
-We provide an example test script `dist_test.sh` using PyTorch distributed data parallel (DDP). 
+We provide an example test script `dist_test.sh` using PyTorch distributed data parallel (DDP).
 For example, to test SwiftFormer-XS on an 8-GPU machine:
 
 ```
